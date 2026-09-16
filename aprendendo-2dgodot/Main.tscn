@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dg81nfjrr6rds"]
+
+[ext_resource type="PackedScene" uid="uid://bfaeda0w0tfbx" path="res://Player/player.tscn" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://bssijngbvw0gk" path="res://icon.svg" id="3_r0du0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ynso5"]
+a = Vector2(1096, 210)
+b = Vector2(23, 215)
+
+[node name="Main" type="Node2D" unique_id=806542510]
+
+[node name="Player" parent="." unique_id=2064306104 instance=ExtResource("2_r0du0")]
+position = Vector2(371, 287)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=355766275]
+position = Vector2(-10, 41)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=1235127408]
+position = Vector2(579.5, 472.5)
+scale = Vector2(9.0078125, 2.1171877)
+texture = ExtResource("3_r0du0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1846750694]
+position = Vector2(10, 127)
+shape = SubResource("SegmentShape2D_ynso5")
